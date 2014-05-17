@@ -1,0 +1,376 @@
+
+R version 3.0.3 (2014-03-06) -- "Warm Puppy"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.63 (6660) x86_64-apple-darwin10.8.0]
+
+[Workspace restored from /Users/Inal63/.RData]
+[History restored from /Users/Inal63/.Rapp.history]
+
+> install.packages("ctv")
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ctv_0.7-9.tgz'
+Content type 'application/x-gzip' length 283700 bytes (277 Kb)
+opened URL
+==================================================
+downloaded 277 Kb
+
+
+The downloaded binary packages are in
+	/var/folders/g5/dbfwh4hs56d2x7trb7hg35g80000gn/T//RtmpRiuzmv/downloaded_packages
+> library("ctv")
+> install.views
+function (views, coreOnly = FALSE, repos = NULL, ...) 
+{
+    pkgs <- .get_pkgs_from_ctv_or_repos(views = views, coreOnly = coreOnly, 
+        repos = repos)
+    for (i in seq(along = pkgs)) install.packages(pkgs[[i]], 
+        repos = names(pkgs)[i], ...)
+    invisible()
+}
+<environment: namespace:ctv>
+> update.views
+function (views, coreOnly = FALSE, repos = NULL, lib.loc = NULL, 
+    filters = NULL, ...) 
+{
+    pkg_list <- .get_pkgs_from_ctv_or_repos(views = views, coreOnly = coreOnly, 
+        repos = repos)
+    for (i in seq(along = pkg_list)) {
+        pkgs <- pkg_list[[i]]
+        repos <- names(pkg_list)[i]
+        apkgs <- available.packages(contriburl = contrib.url(repos), 
+            filters = filters)
+        unavail <- which(!(pkgs %in% as.character(apkgs[, 1L])))
+        if (length(unavail) > 0L) {
+            warning(sprintf("The following packages are not available: %s", 
+                paste(pkgs[unavail], collapse = ", ")))
+            pkgs <- pkgs[-unavail]
+        }
+        apkgs <- apkgs[pkgs, , drop = FALSE]
+        ipkgs <- installed.packages(lib.loc = lib.loc)
+        ipkgs <- ipkgs[which(ipkgs[, "Package"] %in% pkgs), , 
+            drop = FALSE]
+        if (NROW(ipkgs) > 0L) {
+            not_installed <- which(!(pkgs %in% ipkgs[, 1L]))
+            cpkgs <- if (length(not_installed) > 0L) 
+                pkgs[-not_installed]
+            else pkgs
+            get_highest_version <- function(x) as.character(max(package_version(ipkgs[which(ipkgs[, 
+                1L] %in% x), "Version"])))
+            not_uptodate <- which(package_version(apkgs[cpkgs, 
+                "Version"]) > package_version(sapply(cpkgs, get_highest_version)))
+            pkgs <- sort(c(pkgs[not_installed], cpkgs[not_uptodate]))
+        }
+        apkgs <- apkgs[pkgs, , drop = FALSE]
+        if (NROW(apkgs) > 0L) 
+            install.packages(apkgs[, 1L], repos = repos, lib = lib.loc, 
+                ...)
+    }
+    invisible()
+}
+<environment: namespace:ctv>
+> ls
+function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+    pattern) 
+{
+    if (!missing(name)) {
+        nameValue <- try(name, silent = TRUE)
+        if (identical(class(nameValue), "try-error")) {
+            name <- substitute(name)
+            if (!is.character(name)) 
+                name <- deparse(name)
+            warning(gettextf("%s converted to character string", 
+                sQuote(name)), domain = NA)
+            pos <- name
+        }
+        else pos <- nameValue
+    }
+    all.names <- .Internal(ls(envir, all.names))
+    if (!missing(pattern)) {
+        if ((ll <- length(grep("[", pattern, fixed = TRUE))) && 
+            ll != length(grep("]", pattern, fixed = TRUE))) {
+            if (pattern == "[") {
+                pattern <- "\\["
+                warning("replaced regular expression pattern '[' by  '\\\\['")
+            }
+            else if (length(grep("[^\\\\]\\[<-", pattern))) {
+                pattern <- sub("\\[<-", "\\\\\\[<-", pattern)
+                warning("replaced '[<-' by '\\\\[<-' in regular expression pattern")
+            }
+        }
+        grep(pattern, all.names, value = TRUE)
+    }
+    else all.names
+}
+<bytecode: 0x1021b0eb0>
+<environment: namespace:base>
+Warning: dependency ‘rstan’ is not available
+also installing the dependencies ‘fftw’, ‘tuneR’, ‘extrafontdb’, ‘Rttf2pt1’, ‘intergraph’, ‘network’, ‘scagnostics’, ‘sna’, ‘tree’, ‘tkrplot’, ‘GENEAread’, ‘matlab’, ‘signal’, ‘seewave’, ‘mmap’, ‘igraph’, ‘RgoogleMaps’, ‘png’, ‘rjson’, ‘foreach’, ‘lars’, ‘glasso’, ‘extrafont’
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/fftw_1.0-3.tgz'
+Content type 'application/x-gzip' length 669309 bytes (653 Kb)
+opened URL
+==================================================
+downloaded 653 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/tuneR_1.2.1.tgz'
+Content type 'application/x-gzip' length 383133 bytes (374 Kb)
+opened URL
+==================================================
+downloaded 374 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/extrafontdb_1.0.tgz'
+Content type 'application/x-gzip' length 6601 bytes
+opened URL
+==================================================
+downloaded 6601 bytes
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/Rttf2pt1_1.3.tgz'
+Content type 'application/x-gzip' length 101240 bytes (98 Kb)
+opened URL
+==================================================
+downloaded 98 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/intergraph_2.0-0.tgz'
+Content type 'application/x-gzip' length 65530 bytes (63 Kb)
+opened URL
+==================================================
+downloaded 63 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/network_1.9.0.tgz'
+Content type 'application/x-gzip' length 680634 bytes (664 Kb)
+opened URL
+==================================================
+downloaded 664 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/scagnostics_0.2-4.tgz'
+Content type 'application/x-gzip' length 65344 bytes (63 Kb)
+opened URL
+==================================================
+downloaded 63 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/sna_2.3-2.tgz'
+Content type 'application/x-gzip' length 831052 bytes (811 Kb)
+opened URL
+==================================================
+downloaded 811 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/tree_1.0-35.tgz'
+Content type 'application/x-gzip' length 99590 bytes (97 Kb)
+opened URL
+==================================================
+downloaded 97 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/tkrplot_0.0-23.tgz'
+Content type 'application/x-gzip' length 21409 bytes (20 Kb)
+opened URL
+==================================================
+downloaded 20 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/GENEAread_1.1.1.tgz'
+Content type 'application/x-gzip' length 313566 bytes (306 Kb)
+opened URL
+==================================================
+downloaded 306 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/matlab_1.0.1.tgz'
+Content type 'application/x-gzip' length 120648 bytes (117 Kb)
+opened URL
+==================================================
+downloaded 117 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/signal_0.7-4.tgz'
+Content type 'application/x-gzip' length 243944 bytes (238 Kb)
+opened URL
+==================================================
+downloaded 238 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/seewave_1.7.3.tgz'
+Content type 'application/x-gzip' length 3716498 bytes (3.5 Mb)
+opened URL
+==================================================
+downloaded 3.5 Mb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/mmap_0.6-12.tgz'
+Content type 'application/x-gzip' length 78589 bytes (76 Kb)
+opened URL
+==================================================
+downloaded 76 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/igraph_0.7.0.tgz'
+Content type 'application/x-gzip' length 4808999 bytes (4.6 Mb)
+opened URL
+==================================================
+downloaded 4.6 Mb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/RgoogleMaps_1.2.0.5.tgz'
+Content type 'application/x-gzip' length 477776 bytes (466 Kb)
+opened URL
+==================================================
+downloaded 466 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/png_0.1-7.tgz'
+Content type 'application/x-gzip' length 238278 bytes (232 Kb)
+opened URL
+==================================================
+downloaded 232 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/rjson_0.2.13.tgz'
+Content type 'application/x-gzip' length 135207 bytes (132 Kb)
+opened URL
+==================================================
+downloaded 132 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/foreach_1.4.2.tgz'
+Content type 'application/x-gzip' length 381604 bytes (372 Kb)
+opened URL
+==================================================
+downloaded 372 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/lars_1.2.tgz'
+Content type 'application/x-gzip' length 198295 bytes (193 Kb)
+opened URL
+==================================================
+downloaded 193 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/glasso_1.7.tgz'
+Content type 'application/x-gzip' length 42346 bytes (41 Kb)
+opened URL
+==================================================
+downloaded 41 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/extrafont_0.16.tgz'
+Content type 'application/x-gzip' length 31815 bytes (31 Kb)
+opened URL
+==================================================
+downloaded 31 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/GGally_0.4.5.tgz'
+Content type 'application/x-gzip' length 339863 bytes (331 Kb)
+opened URL
+==================================================
+downloaded 331 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggdendro_0.1-14.tgz'
+Content type 'application/x-gzip' length 95759 bytes (93 Kb)
+opened URL
+==================================================
+downloaded 93 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/GGEBiplotGUI_1.0-7.tgz'
+Content type 'application/x-gzip' length 25247 bytes (24 Kb)
+opened URL
+==================================================
+downloaded 24 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggHorizon_0.1.tgz'
+Content type 'application/x-gzip' length 41528 bytes (40 Kb)
+opened URL
+==================================================
+downloaded 40 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/GGIR_1.0-3.tgz'
+Content type 'application/x-gzip' length 2555928 bytes (2.4 Mb)
+opened URL
+==================================================
+downloaded 2.4 Mb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/gglasso_1.1.tgz'
+Content type 'application/x-gzip' length 213316 bytes (208 Kb)
+opened URL
+==================================================
+downloaded 208 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggm_2.0.tgz'
+Content type 'application/x-gzip' length 471754 bytes (460 Kb)
+opened URL
+==================================================
+downloaded 460 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggmap_2.3.tgz'
+Content type 'application/x-gzip' length 4529699 bytes (4.3 Mb)
+opened URL
+==================================================
+downloaded 4.3 Mb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggmcmc_0.5.1.tgz'
+Content type 'application/x-gzip' length 120396 bytes (117 Kb)
+opened URL
+==================================================
+downloaded 117 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/GGMselect_0.1-8.tgz'
+Content type 'application/x-gzip' length 326090 bytes (318 Kb)
+opened URL
+==================================================
+downloaded 318 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggparallel_0.1.1.tgz'
+Content type 'application/x-gzip' length 1864751 bytes (1.8 Mb)
+opened URL
+==================================================
+downloaded 1.8 Mb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggplot2_0.9.3.1.tgz'
+Content type 'application/x-gzip' length 2650041 bytes (2.5 Mb)
+opened URL
+==================================================
+downloaded 2.5 Mb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggROC_1.0.tgz'
+Content type 'application/x-gzip' length 13488 bytes (13 Kb)
+opened URL
+==================================================
+downloaded 13 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggsubplot_0.3.2.tgz'
+Content type 'application/x-gzip' length 1251509 bytes (1.2 Mb)
+opened URL
+==================================================
+downloaded 1.2 Mb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggtern_1.0.3.1.tgz'
+Content type 'application/x-gzip' length 264264 bytes (258 Kb)
+opened URL
+==================================================
+downloaded 258 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/ggthemes_1.6.0.tgz'
+Content type 'application/x-gzip' length 171101 bytes (167 Kb)
+opened URL
+==================================================
+downloaded 167 Kb
+
+
+The downloaded binary packages are in
+	/var/folders/g5/dbfwh4hs56d2x7trb7hg35g80000gn/T//RtmpRiuzmv/downloaded_packages
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/gtools_3.4.0.tgz'
+Content type 'application/x-gzip' length 109534 bytes (106 Kb)
+opened URL
+==================================================
+downloaded 106 Kb
+
+trying URL 'http://lib.stat.cmu.edu/R/CRAN/bin/macosx/contrib/3.0/mvtnorm_0.9-9999.tgz'
+Content type 'application/x-gzip' length 387345 bytes (378 Kb)
+opened URL
+==================================================
+downloaded 378 Kb
+
+
+The downloaded binary packages are in
+	/var/folders/g5/dbfwh4hs56d2x7trb7hg35g80000gn/T//RtmpRiuzmv/downloaded_packages
+> 

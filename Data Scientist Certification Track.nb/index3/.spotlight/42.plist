@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keywords</key>
+	<string></string>
+	<key>txt</key>
+	<string>April 2014 pre-course notes III Matrices are vectors that have a dimension attribute of #row &amp; #column. you specify how many of each in the creation of the matrix Matrices can also be created directly from vectors by adding a dimension attribute. Matrices can be created by column- binding or row-binding </string>
+</dict>
+</plist>

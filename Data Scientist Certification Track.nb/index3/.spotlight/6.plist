@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keywords</key>
+	<string></string>
+	<key>txt</key>
+	<string>Course Info Fill this page with TA contact info and office hours, a link to the class' website, important test and assignment dates, etc. In this course you will learn how to program in R and how to use R for effective data analysis. You will learn how to install and configure software necessary for a statistical programming environment, discuss generic programming language concepts as they are implemented in a high-level statistical language. The course covers practical issues in statistical computing which includes programming in R, reading data into R, accessing R packages, writing R functions, debugging, and organizing and commenting R code. Topics in statistical data analysis and optimization will provide working examples. Course Content
+Week 1: Overview of R, R data types and objects, reading and writing data
+Week 2: Control structures, functions, scoping rules, dates and times
+Week 3: Loop functions, debugging tools
+Week 4: Simulation, code profiling Assessments
+Quizzes
+There will be one quiz every week. The quizzes will all open on the first day of the course but they will be due weekly. So the Week 1 Quiz will be due at the end of the first week and the Week 2 Quiz will be due at the end of the second week, etc.
+Please refer to the individual weekly Quiz deadlines to see the exact date and time that each Quiz is due.
+Programming Assignments
+There will be three programming assignments. The first programming assignment is due at the end of the second week. Subsequent programming assignments are due weekly after that.
+Programming Assignments 1 and 3 will be graded via unit tests using a submission script that will compare the output of your functions to the correct output. Note that Programming Assignment 2 will be graded via a peer assessment.
+OPTIONAL: Interactive Learning Module
+For Week 1 we have an experimental feature called Statistics with Interactive R Learning, or SWIRL. This is an R package designed to help you learn R by walking you through a series of interactive lessons. The lessons take place right on the R console and so you can learn and use R at the same time in the proper environment.
+Running these modules is completely optional. If you complete them you will get 1 extra credit point per module, for a total of 6 extra points.
+
+Grading
+Quizzes
+You may attempt each quiz up to 2 times. Only the maximum score will count toward your grade.
+Programming Assignments
+Programming assignments will require submissions via a submission script. You may make an unlimited number of submissions for each of the programming assignments and your maximum score will count toward your grade.  </string>
+</dict>
+</plist>

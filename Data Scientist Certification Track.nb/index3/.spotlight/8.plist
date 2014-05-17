@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keywords</key>
+	<string></string>
+	<key>txt</key>
+	<string>27 of April 2014- Pre course notes What are the Atomic Classes of objects in R?
+
+What is a Vector?
+
+How is a Vector function written in R?
+
+What are Attributes in an vector? How many can there be?
+
+Which attributes are in every object?
+
+How do you access  attributes in an object?
+
+How can you express a fraction in R?
+
+How do you represent infinity in R?
+
+What is NaN in R?
+
+
+Introduction to R
+
+R have objects all different kinds of data
+Atomic Classes
+Character
+Numeric
+Integer
+Complex
+Logical (true/false)
+
+Vector is the most basic object- only list represents vector that contain objects of different classes- sequence of objects or different classes- a list inside a list, etc
+
+Empty vectors can be created with the vector( )  function.
+
+Number are numeric objects they are double precision real numbers
+	- as as integer L suffix makes a fraction
+	-Inf is infinity
+	-NaN is not a number - undefined or a missing value as well
+Attributes can be part of objects
+ 	-- names, dimnames
+	-- dimensions
+	-- class in every object
+	--length (how many numbers are in the attributed string) in every object
+	-- other user-defined attributes/metadata
+
+attributes of an object can be accessed using the attributes() function. Modify it
+
+Expressions &amp; Evaluation
+	&lt;- symbol is the assignment operator
+		&gt; is the prompt for R Lanaguage
+		&gt;x&lt;- 5  ##nothing printed
+				## Indicates a comment
+	&gt; x     ## auto-printing occurs
+	[1] 5
+	[number] content  indicates that line one the object x  the first element is 5
+
+	&gt; print(x)  ##explicit printing
+	[1] 5
+
+The grammar of the language determines whether an expression is complete or not.
+
+Printing the
+	a colon : is what creates an integer sequence 
+	&gt; x &lt;- 1:20
+	&gt; x 
+		[1] 1 2 3 4 5 6 7 8 9 10 11 12 13 		[14] 14 15 16 17 18 19 20
+
+
+
+To study, choose View -&gt; Notes Column to hide this column as you ask yourself the review questions in the left column. In summary there are various data types in R the first set we learn of is the objects called vectors and the attributes found in them. We also learned how to create a vector and print out the elements contained in them; we learned how to make a sequence of integers in a vector and print that list out. </string>
+</dict>
+</plist>

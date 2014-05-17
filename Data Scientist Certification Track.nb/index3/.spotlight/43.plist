@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keywords</key>
+	<string></string>
+	<key>txt</key>
+	<string>April 2014 pre-course notes IV Lists are special type of vector that can obtain elements of different classes. They very important data type in R and you should get to know them very well.
+To view all the objects created in this R session,use the 'list function:
+	&gt; ls()
+To remove an individual object from the current working environment (a in this care), use the following command:
+	&gt; rm(a)
+Objects can be removed by nestling the ls() function within the rm() function. THIS IS NOT UNDOABLE!!!
+	&gt; rm(list=ls())
+
+Since you can put a variety of things inside a list, that are not of the same class you can see this demonstrated below:
+The results of a list will show up with a double bracket [[x]] </string>
+</dict>
+</plist>

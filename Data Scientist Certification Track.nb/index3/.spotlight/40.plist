@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keywords</key>
+	<string></string>
+	<key>txt</key>
+	<string>Notes from the book on R [cliff notes if you will] All the notes in the Cliff-notes section are written verbatim from the Learn R in a Day book- DO NOT USE in any of your written piece that are submitted for class. This is extra information for practice only. Functions in R and their Mathematical Function: Functions are used frequently in R - that also allows R to be able to interpret calculations dynamically (ie. in this case, from within the function command itself) Function in R
+
+Mathematical Function +
+
+Addition -
+
+Subtraction *
+
+Multiplication /
+
+Division sqrt(x)
+
+Square-Root of x x^y
+
+X to the power of y exp(x)
+
+Exponential of x log(x,e)
+
+Natural log of x to the base e factorial(x)
+
+Factorial of x cos(x)
+
+Cosine of x (in radians) sin(x)
+
+Sine of x (in radians) tan(x)
+
+Tangent of x (in radians) abs(x)
+
+Absolute value of x rowMeans(x)
+
+Row means of data frame x colSum(x)
+
+Column sums of data frame x rowSums(x)
+
+Row sums of data frame x Concatenation and Arrays - Concatenation (the process of combining, linking, or joining) numeric or character values is a feature in R.  This is achieved by using the c()  function. You can create an array by joining the numbers with comas : &gt; f &lt;- c(1,2,3,4,5) </string>
+</dict>
+</plist>

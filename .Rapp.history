@@ -1,91 +1,18 @@
-x<- 10
-x
-a<- "y"
-a
-a<- x
-a
-a<- !
-a<- "!"
-a
-g<- 5
-x+g
-sqrt(x)
-x^y
-x^a
-x^g
-<divider<-function(x,g) {#
-	+result<-x/g#
-	+print(result)#
-	+#
-}
-divider<-function(x,g) {#
-	+result<-x/g#
-	+print(result)#
-	+#
-}
-<divider<-function(x,g) {#
-	+result<-x/g#
-	+print(result)#
-}
-divider<- function(x,g) {#
-	+result<-x/g#
-	+print(result)#
-	+#
-}
-divider<- function(x,y) {#
-	+result<- x/y#
-	+print(result)#
-	+#
-}
-divider
-divider(50,25)
-divider<- function(x,y){+result<- x/y+print(result)}
-divider(50,25)
-result<- x/y
-y<- 1
-divider(50,25)
-divider<-function(x,y){result<-x/y print(result)}
-divider<-function(x,y){result<-x/y +print(result)}
-divider<-(50,25)
-divider<-(50 25)
-divider<-(50/25)
-divider
-divider<-function(x,y){result<-x/y +print(result)}
-divider(50,25)
-divider<-function(x,y){result<-x/y}
-divider(50,25)
-result
-divider<-function(x, y){result<- x/y}
-divider(50, 25)
-result
-result<-x/y#
-divider<-function(x, y)
-{result<-x/y}
-divider(50, 25)
-result
-divider
-divider<-function(x,y){}
-divider<- function(x,y){#
-	result<-x/y#
-	print(result)#
-}
-divider(50,25)
-divider(22,4.4)
-divider(g,a)
-divider(a+x,y)
-divider(1+x,y)
-f<- c(1,2,3,4,5)
-f
-f+4
-f+4
-d<- f/4
-d
-f+d
-h<- c(1,2,3,4,5,6,7.8.9.10)
-h<- c(1,2,3,4,5,6,7,8,9,10)
-f
-f+h
-f
-h<- c(1,2,3)
-f+h
-f
+download.file(https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv)
+setwd("~/datasciencecoursera")
+example(lm)
+install.packages("akima")
+install.packages("boot")
+install.packages("car")
+install.packages("lme4")
+install.packages("meta")
+install.packages("mgcv")
+install.packages("nlme")
+install.packages("deSolve")
+install.packages("R2jags")
+install.packages("RColorBrewer")
+install.packages("RODBC")
+install.packages("rpart")
+install.packages("spatstat")
+install.packages("spdep")
+install.packages("tree")

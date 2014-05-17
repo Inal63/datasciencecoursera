@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keywords</key>
+	<string></string>
+	<key>txt</key>
+	<string>April 2014 pre-course notes V  Factors can be used to represent categorical data. Ordered or unordered. Basically an integer vector where each integer has a label. for example (Male and Female) which is unordered or Director, Associate Director, Assistant Director which is ordered
+	Factors are treated specially by modeling function: lm() &amp; glm()
+		Factors are self describing, which is easier to understand that plain 1, 2 or 0,1 to mean yes and no; as opposed to using yes and no as the categorical data value.
+
+		It also tells you how many levels the vector has- meaning which is the baseline (the first important answer) and the second level.
+
+	&gt; x &lt;- factor(c("yes", "yes", "no", "yes", "no"))
+	&gt; x 
+	[1] yes yes no yes no
+	Levels: no yes
+	&gt; table(x)
+	x
+	no yes
+	2    3
+	&gt; unclass(x)
+	[1] 2 2 1 2 1
+	attr(, "levels")
+	[1] "no" "yes"
+
+The order of the levels can be set using the levels argument to factor().
+This can be important because in linear modeling the first level is considered the baseline level.
+
+	&gt; x &lt;- factor(c("yes", "yes", "no", "yes", ""no"), levels = c("yes", "no"))
+
+	&gt; x
+	[1] yes yes no yes no
+	Levels: yes no
+
+
+
+		 </string>
+</dict>
+</plist>

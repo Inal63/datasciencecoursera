@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keywords</key>
+	<string></string>
+	<key>txt</key>
+	<string>April 2014 pre-course notes VI Missing Values of NA and NaN that can be tested using is. na() and is.nan() Data Frames used to store tabular data-they are a special type of list where the elements of the list are listed as columns of different classes with many rows 
+￼ </string>
+</dict>
+</plist>
